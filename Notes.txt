@@ -1,0 +1,58 @@
+What is a Transaction?
+
+Format of the transaction object on Ethereum:
+
+Nonce(Nonsense): How many times the sender has sent a transaction.
+To: Address of account this money is going to.
+Value: Amount of ether to send to the target account.
+GasPrice: Amount of ether the sender is willing to pay per unit gas to get this transaction processed.
+StartGas/gasLimit: Unit of gas that this transaction can consume.
+V, R, S: Cryptographic pieces of data that can be used to generate the senders account address. It is generated from the sender's private key.
+
+
+Workflow:
+
+"Submit" -> 
+Address sent to backend server ->
+Server using web3 library creates "transaction" object ->
+Backend server send "Transaction" to Rinkeby test network -> 
+Backend waits for transaction confirm -> 
+Backend sends success message to browser
+
+What is a smart contract?
+A smart contract is an account controlled by code.
+
+Properties of a Smart Contract Account:
+Balance: Amount of Ether this account owns.
+Storage: Data storage for this contract.
+Code: Raw machine code for this contract.
+
+External Account: An account that you or I or anybody owns. They are decoupled from any individual network.
+
+Contract Accounts: Accounts that are specific to one network like Rinkeby, Ropsten, or Mainnet. These accounts cannot be accessed from other network accounts.
+
+Solidity: 
+Written in .sol files.
+Strongly Typed - A language is strongly typed if type errors are always detected.
+Similar to Javascript.
+Has several huge, gigantic 'gotchas'.
+
+Solidity Workflow:
+Contract Definition ->
+Solidity Compiler ->
+	-> Byte code ready for deployment
+	-> Application Binary Interface (ABI)
+
+Writing our First Contract Instructions:
+1. Load Remix in your browser by visiting this link: https://remix.ethereum.org/
+
+2. Click the contracts directory in the default_workspace
+
+3. Open the 3_Ballot.sol file and delete all of the code within it.
+
+4. Click the icon "S" icon in the left sidebar and then change the COMPILER version to 0.4.17+commit.bdeb9e52 to match the lecture videos.
+
+5. Find the COMPILER CONFIGURATION section and tick the Auto compile box. With this option enabled, Remix will compile the contract automatically.
+
+6. You should now be all caught to begin writing your contract code as shown in the lecture video.
+
