@@ -57,22 +57,51 @@ Writing our First Contract Instructions:
 6. You should now be all caught to begin writing your contract code as shown in the lecture video.
 
 Our First Contract:
+-----------------START OF CODE----------------------------
 
-pragma solidity ^0.4.17; // Version of Solidity
+pragma solidity ^0.4.17; // Specifies the Version of Solidity
 
 // Our first contract
+// Defines our first contract (Remember Classes!) that will have some number of methods and variables
 contract Inbox {
     // Create a new variable in the Inbox contract
     // Type = string, public=accessible by everyone
+    // This public varaible will be stored on the blockchain
     string public message;
 
 
-    // Associated Contract functions
+    // Associated Contract functions that are members of this class contract
+    // Below is the constructor function for this class
     function Inbox(string initialMessage) public {
         message = initialMessage;
     }
     function setMessage(string newMessage) public {
         message = newMessage;
     }
+    //  Function syntax below
+    //  Function Name;  Function Type; Return Types;   
+    function getMessage() public view returns (string) {
+        return message;
+    }
 }
 
+
+-------------END OF CODE-------------------------------
+
+Common Function Types
+public: Anyone can call this function // Can only use once per function
+private: Only this contract can call this function // Can only use once per function
+view: This function returns data and does not modify the contract's data
+constant: This function returns data and does not modify the contract's data
+pure: Function will not modify or even read the contract's data
+playable: When someone calls this function they might send ether along.
+
+Deploying our Contract:
+1. Click the Ethereum Icon in the left sidebar
+
+2. Enter a string in the Contract field and click deploy
+
+3. To expose the function of the newly deployed contract, click the down arrow under Deployed Contracts
+
+Remix.Ethereum Workflow:
+The remix editor takes or code and compiles it into bytecode. It then deploys the source code onto a fake in-browser ethereum network for testing.
