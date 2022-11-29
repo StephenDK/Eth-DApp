@@ -56,3 +56,23 @@ Writing our First Contract Instructions:
 
 6. You should now be all caught to begin writing your contract code as shown in the lecture video.
 
+Our First Contract:
+
+pragma solidity ^0.4.17; // Version of Solidity
+
+// Our first contract
+contract Inbox {
+    // Create a new variable in the Inbox contract
+    // Type = string, public=accessible by everyone
+    string public message;
+
+
+    // Associated Contract functions
+    function Inbox(string initialMessage) public {
+        message = initialMessage;
+    }
+    function setMessage(string newMessage) public {
+        message = newMessage;
+    }
+}
+
