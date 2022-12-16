@@ -105,3 +105,38 @@ Deploying our Contract:
 
 Remix.Ethereum Workflow:
 The remix editor takes or code and compiles it into bytecode. It then deploys the source code onto a fake in-browser ethereum network for testing.
+
+Remix Compile Options
+Environment: Use the Remix VM(London) This is AKA Javascript VM
+Account: Upon starting the inbrowser Ethereum machine we get a series of accounts to work with.
+Gas Limit: 
+Value: Used to make a transaction and sends along the value of ether you wnat to send.
+
+**IMPORTANT NOTE** - Whenever we define a variable and mark it with the public keyword then the contract automatically creates a new function with the same name as the function. Calling the function returns the variable itself. getMessage in the code above does the same thing.
+
+Redeploying Contracts:
+Change in Code
+----------------------------------------
+pragma solidity ^0.4.17; // Specifies the Version of Solidity
+
+// Our first contract
+// Defines our first contract (Remember Classes!) that will have some number of methods and variables
+contract Inbox {
+    // Create a new variable in the Inbox contract
+    // Type = string, public=accessible by everyone
+    // This public varaible will be stored on the blockchain
+    string public message;
+
+
+    // Associated Contract functions that are members of this class contract
+    // Below is the constructor function for this class
+    function Inbox(string initialMessage) public {
+        message = initialMessage;
+    }
+    function setMessage(string newMessage) public {
+        message = newMessage;
+    }
+}
+
+--------------------------------------------
+When making a change to the code, make sure to redeploy the contract. Delete the contract instance by pressing the "x" and then redeploy. Once completed, place another value in initialMessage and create contract
