@@ -139,4 +139,8 @@ contract Inbox {
 }
 
 --------------------------------------------
-When making a change to the code, make sure to redeploy the contract. Delete the contract instance by pressing the "x" and then redeploy. Once completed, place another value in initialMessage and create contract
+When making a change to the code, make sure to redeploy the contract. Delete the contract instance by pressing the "x" and then redeploy. Once completed, place another value in initialMessage and create contract.
+
+Behind the Scenes of Deployment(Video)
+External Account to Create Contact Transaction
+
