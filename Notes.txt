@@ -235,3 +235,9 @@ Tool:
 https://iancoleman.io/bip39/
 
 This tool will show us how to genertate a mnemonic word set. By entering in your mnemonic 12 words we can see that a series of accounts can be created using your 12 words. When we create a new account in metamask, the account address matches the generated accounts in the tool above in order from top to bottom.
+
+OBAINING MORE TEST ETHER FROM RECOMMENDED FAUCET:
+https://goerlifaucet.com/
+
+Use the link above and login using your account. Once logged in you can sent GoerliETH to your account for testing.
+
