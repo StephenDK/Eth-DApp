@@ -142,5 +142,87 @@ contract Inbox {
 When making a change to the code, make sure to redeploy the contract. Delete the contract instance by pressing the "x" and then redeploy. Once completed, place another value in initialMessage and create contract.
 
 Behind the Scenes of Deployment(Video)
-External Account to Create Contact Transaction
+External Account to Create Contact Transaction Object
 
+Nonce(Nonsense): How many times the sender has sent a transaction.
+To: **SUPER IMPORTANT** The difference betweeen a trasaction and a contract creation trasaction is that there is no "to" property.
+Data: Compiled bytecode of the contract.
+Value: Amount of "Wei" to send to the target account.
+GasPrice: Amount of "Wei" the sender is willing to pay per unit gas to get this transaction processed.
+StartGas/gasLimit: Unit of gas that this transaction can consume.
+V, R, S: Cryptographic pieces of data that can be used to generate the senders account address. It is generated from the sender's private key.
+
+More On Running Functions Than you Want to Know
+Any time we want to update any data on the blockchain we need to submit a transaction. We also have to wait for the POW/POS to be proved.
+
+Important to note that getMessage does not trigger any changes on the blockchain while setMessage triggers a change on the blockchain.
+
+There are two way to invoke functions that belong to our contracts. These two way result in two different behaviors.
+
+The first way we can call a function is "Calling a Function"
+
+1. Running Contract Functions
+Cannot modify the contracts data
+Can return data
+Runs instantly
+Free to do
+
+The second is "Sending a transaction as a function"
+
+2. Sending a transaction to a function
+Can modify a contracts data
+*Takes time to execute!
+*Returns the transaction hash
+*Cost money
+
+MOST IMPORTANTLY - Transactions are not instantaniously done on the network. Most examples will use remix where transactions are done almostly instantly.
+
+Wei VS Ether:
+Gas: wei, gwei, finney, and ether are all measurments of the same thing.
+1 ether = 1,000,000,000,000,000,000 Wei
+Wei is a very small unit of Ehter 	
+
+Gas and Transactions:
+To get someone to run our contract we need to pay them money
+
+Google speadsheet of Gas prices depending on operations
+https://docs.google.com/spreadsheets/d/1n6mRqkBz3iWcOlRem_mO09GtSKEKrAsfO7Frgx18pNU/edit#gid=0
+
+GasPrice: Amount of Wei the sender is willing to pay per unit gas to get this transaction processed.
+startGas/gasLimit: Units of gas that this transaction can consume.
+
+*GAS EQUATION*
+Variables:
+gasPrice = 300
+Used gas = 14
+
+Total Cost = 300 wei/gas * 14 gas = 4,200 wei
+
+--NEW CODE--
+pragma solidity ^0.4.17; // Specifies the Version of Solidity
+
+// Our first contract
+// Defines our first contract (Remember Classes!) that will have some number of methods and variables
+contract Inbox {
+    // Create a new variable in the Inbox contract
+    // Type = string, public=accessible by everyone
+    // This public varaible will be stored on the blockchain
+    string public message;
+
+
+    // Associated Contract functions that are members of this class contract
+    // Below is the constructor function for this class
+    function Inbox(string initialMessage) public {
+        message = initialMessage;
+    }
+    function setMessage(string newMessage) public {
+        message = newMessage;
+    }
+    function doMath(int a, int b) {
+        a + b;  // Costs 3 gas
+        b - a;  // Costs 3 gas
+        a * b;  // Costs 5 gas
+        a == 0; // Costs 3 gas
+        // Total Gas Needed: 14
+    }
+}
