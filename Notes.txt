@@ -226,3 +226,12 @@ contract Inbox {
         // Total Gas Needed: 14
     }
 }
+
+MNEMONIC PHRASES:
+A 12 word mnemonic allows us to generate an account with a public key, private key, amd an address.
+Using the BIP39 mnemonic algorithm we can generate a series of accounts from 12 words. 
+
+Tool:
+https://iancoleman.io/bip39/
+
+This tool will show us how to genertate a mnemonic word set. By entering in your mnemonic 12 words we can see that a series of accounts can be created using your 12 words. When we create a new account in metamask, the account address matches the generated accounts in the tool above in order from top to bottom.
